@@ -33,5 +33,10 @@ jobs:
       - name: Upload files to S3
         run: |
           aws s3 cp . s3://mytrinities.com/ --recursive
+      - name: Invalidate CloudFront cache
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+           DISTRIBUTION: E3EK1XOW21TZNC
+           PATHS: "/*"
 
 
