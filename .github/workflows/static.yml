@@ -30,7 +30,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
-      - name: Upload files to S3
+      - name: Upload files to my S3
         run: |
           aws s3 cp . s3://mytrinities.com/ --recursive
       - name: Invalidate CloudFront cache
